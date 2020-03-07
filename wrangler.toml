@@ -1,4 +1,4 @@
-name = "cloudflare-worker-cra"
+name = "typescript-react-template"
 type = "webpack"
 workers_dev = true
 route = ""
