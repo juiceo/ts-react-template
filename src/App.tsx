@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
-import HomePage from './pages/Home';
+import HomePage from './pages/Home'
 
 function App() {
     return (
@@ -11,7 +11,7 @@ function App() {
                 <Route component={HomePage} />
             </Switch>
         </Router>
-    );
+    )
 }
 
-export default App;
+export default App
