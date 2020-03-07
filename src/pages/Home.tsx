@@ -34,13 +34,50 @@ const HomePage = (props: Props) => {
         setAnchorEl(null)
     }
     return (
-        <>
+        <Box>
+            <Box
+                display="flex"
+                flexDirection="column"
+                justifyContent="center"
+                alignItems="center"
+                className={classes.top}
+            >
+                <Box className={classes.topMiddle}>
+                    <Typography variant="h2" gutterBottom>
+                        React TypeScript Template
+                    </Typography>
+                    <Typography variant="body1" gutterBottom>
+                        Create React App
+                    </Typography>
+                    <Typography variant="body1" gutterBottom>
+                        TypeScript
+                    </Typography>
+                    <Typography variant="body1" gutterBottom>
+                        Dark Material UI theme setup
+                    </Typography>
+                    <Typography variant="body1" gutterBottom>
+                        Eslint & Prettier config
+                    </Typography>
+                    <Typography variant="body1" gutterBottom>
+                        Github Actions for automatic deployment to Cloudflare
+                        Workers
+                    </Typography>
+                    <Box
+                        display="flex"
+                        flexDirection="row"
+                        justifyContent="center"
+                        alignItems="center"
+                        mt={2}
+                    >
+                        <Box className={classes.topCircle} />
+                        <Box className={classes.topDiamond} />
+                        <Box className={classes.topSquare} />
+                    </Box>
+                </Box>
+            </Box>
             <Box p={3}>
                 <Grid container spacing={3}>
                     <Grid item xs={12}>
-                        <Typography variant="h6" align="center" gutterBottom>
-                            Typography
-                        </Typography>
                         <Box className={classes.block}>
                             <Typography variant="h1" gutterBottom>
                                 Heading 1
@@ -78,10 +115,7 @@ const HomePage = (props: Props) => {
                             </Typography>
                         </Box>
                     </Grid>
-                    <Grid item xs={12}>
-                        <Typography variant="h6" align="center" gutterBottom>
-                            Color palette
-                        </Typography>
+                    <Grid item xs={12} md={6}>
                         <Box className={classes.block}>
                             <ColorPaletteDisplay color="primary" />
                             <ColorPaletteDisplay color="secondary" />
@@ -92,10 +126,176 @@ const HomePage = (props: Props) => {
                             <ColorPaletteDisplay color="error" />
                         </Box>
                     </Grid>
+                    <Grid item xs={12} md={6}>
+                        <Box
+                            className={classes.block}
+                            display="flex"
+                            alignItems="center"
+                        >
+                            <Box
+                                display="flex"
+                                flexDirection="row"
+                                alignItems="center"
+                                flexWrap="wrap"
+                                justifyContent="center"
+                            >
+                                <Box p={1}>
+                                    <Button variant="contained" color="primary">
+                                        Primary
+                                    </Button>
+                                </Box>
+                                <Box p={1}>
+                                    <Button variant="outlined" color="primary">
+                                        Primary
+                                    </Button>
+                                </Box>
+                                <Box p={1}>
+                                    <Button variant="text" color="primary">
+                                        Primary
+                                    </Button>
+                                </Box>
+                            </Box>
+                            <Box
+                                mt={2}
+                                display="flex"
+                                flexDirection="row"
+                                alignItems="center"
+                                justifyContent="center"
+                                flexWrap="wrap"
+                            >
+                                <Box p={1}>
+                                    <Button
+                                        variant="contained"
+                                        color="secondary"
+                                    >
+                                        Secondary
+                                    </Button>
+                                </Box>
+                                <Box p={1}>
+                                    <Button
+                                        variant="outlined"
+                                        color="secondary"
+                                    >
+                                        Secondary
+                                    </Button>
+                                </Box>
+                                <Box p={1}>
+                                    <Button variant="text" color="secondary">
+                                        Secondary
+                                    </Button>
+                                </Box>
+                            </Box>
+                            <Box
+                                mt={2}
+                                display="flex"
+                                flexDirection="row"
+                                alignItems="flex-start"
+                                justifyContent="center"
+                                flexWrap="wrap"
+                            >
+                                <Box p={1}>
+                                    <TextField
+                                        id="standard-basic"
+                                        label="Standard"
+                                    />
+                                </Box>
+                                <Box p={1}>
+                                    <TextField
+                                        id="filled-basic"
+                                        label="Filled"
+                                        variant="filled"
+                                    />
+                                </Box>
+                                <Box p={1}>
+                                    <TextField
+                                        id="outlined-basic"
+                                        label="Outlined"
+                                        variant="outlined"
+                                    />
+                                </Box>
+                            </Box>
+                            <Box
+                                mt={2}
+                                display="flex"
+                                flexDirection="row"
+                                alignItems="flex-start"
+                                justifyContent="center"
+                                flexWrap="wrap"
+                            >
+                                <Box p={1}>
+                                    <TextField
+                                        id="standard-basic"
+                                        label="Error"
+                                        error
+                                        helperText="Invalid data"
+                                    />
+                                </Box>
+                                <Box p={1}>
+                                    <TextField
+                                        id="filled-basic"
+                                        label="Helper text"
+                                        helperText="Just type something in the field"
+                                    />
+                                </Box>
+                            </Box>
+                            <Box
+                                mt={2}
+                                display="flex"
+                                flexDirection="row"
+                                alignItems="flex-start"
+                                justifyContent="center"
+                                flexWrap="wrap"
+                            >
+                                <Box p={1}>
+                                    <Switch defaultChecked color="primary" />
+                                </Box>
+
+                                <Box p={1}>
+                                    <Switch defaultChecked color="secondary" />
+                                </Box>
+                                <Box p={1}>
+                                    <CircularProgress />
+                                </Box>
+                                <Box p={1}>
+                                    <CircularProgress color="secondary" />
+                                </Box>
+                            </Box>
+                            <Box
+                                mt={2}
+                                display="flex"
+                                flexDirection="row"
+                                alignItems="flex-start"
+                                justifyContent="center"
+                                flexWrap="wrap"
+                            >
+                                <Button
+                                    aria-controls="simple-menu"
+                                    aria-haspopup="true"
+                                    onClick={handleClick}
+                                >
+                                    Open Menu
+                                </Button>
+                                <Menu
+                                    id="simple-menu"
+                                    anchorEl={anchorEl}
+                                    keepMounted
+                                    open={Boolean(anchorEl)}
+                                    onClose={handleClose}
+                                >
+                                    <MenuItem onClick={handleClose}>
+                                        Profile
+                                    </MenuItem>
+                                    <MenuItem onClick={handleClose}>
+                                        My account
+                                    </MenuItem>
+                                    <MenuItem onClick={handleClose}>
+                                        Logout
+                                    </MenuItem>
+                                </Menu>
+                            </Box>
+                        </Box>
+                    </Grid>
                     <Grid item xs={12}>
-                        <Typography variant="h6" align="center" gutterBottom>
-                            Breakpoints
-                        </Typography>
                         <Box className={classes.block}>
                             <Box
                                 mt={2}
@@ -168,180 +368,45 @@ const HomePage = (props: Props) => {
                             </Box>
                         </Box>
                     </Grid>
-                    <Grid item xs={12}>
-                        <Typography variant="h6" align="center" gutterBottom>
-                            Components
-                        </Typography>
-                        <Box
-                            className={classes.block}
-                            display="flex"
-                            alignItems="center"
-                        >
-                            <Box
-                                display="flex"
-                                flexDirection="row"
-                                alignItems="center"
-                                flexWrap="wrap"
-                            >
-                                <Box p={1}>
-                                    <Button variant="contained" color="primary">
-                                        Primary
-                                    </Button>
-                                </Box>
-                                <Box p={1}>
-                                    <Button variant="outlined" color="primary">
-                                        Primary
-                                    </Button>
-                                </Box>
-                                <Box p={1}>
-                                    <Button variant="text" color="primary">
-                                        Primary
-                                    </Button>
-                                </Box>
-                            </Box>
-                            <Box
-                                mt={2}
-                                display="flex"
-                                flexDirection="row"
-                                alignItems="center"
-                                flexWrap="wrap"
-                            >
-                                <Box p={1}>
-                                    <Button
-                                        variant="contained"
-                                        color="secondary"
-                                    >
-                                        Secondary
-                                    </Button>
-                                </Box>
-                                <Box p={1}>
-                                    <Button
-                                        variant="outlined"
-                                        color="secondary"
-                                    >
-                                        Secondary
-                                    </Button>
-                                </Box>
-                                <Box p={1}>
-                                    <Button variant="text" color="secondary">
-                                        Secondary
-                                    </Button>
-                                </Box>
-                            </Box>
-                            <Box
-                                mt={2}
-                                display="flex"
-                                flexDirection="row"
-                                alignItems="flex-start"
-                                flexWrap="wrap"
-                            >
-                                <Box p={1}>
-                                    <TextField
-                                        id="standard-basic"
-                                        label="Standard"
-                                    />
-                                </Box>
-                                <Box p={1}>
-                                    <TextField
-                                        id="filled-basic"
-                                        label="Filled"
-                                        variant="filled"
-                                    />
-                                </Box>
-                                <Box p={1}>
-                                    <TextField
-                                        id="outlined-basic"
-                                        label="Outlined"
-                                        variant="outlined"
-                                    />
-                                </Box>
-                            </Box>
-                            <Box
-                                mt={2}
-                                display="flex"
-                                flexDirection="row"
-                                alignItems="flex-start"
-                                flexWrap="wrap"
-                            >
-                                <Box p={1}>
-                                    <TextField
-                                        id="standard-basic"
-                                        label="Error"
-                                        error
-                                        helperText="Invalid data"
-                                    />
-                                </Box>
-                                <Box p={1}>
-                                    <TextField
-                                        id="filled-basic"
-                                        label="Helper text"
-                                        helperText="Just type something in the field"
-                                    />
-                                </Box>
-                            </Box>
-                            <Box
-                                mt={2}
-                                display="flex"
-                                flexDirection="row"
-                                alignItems="flex-start"
-                                flexWrap="wrap"
-                            >
-                                <Box p={1}>
-                                    <Switch defaultChecked color="primary" />
-                                </Box>
-
-                                <Box p={1}>
-                                    <Switch defaultChecked color="secondary" />
-                                </Box>
-                                <Box p={1}>
-                                    <CircularProgress />
-                                </Box>
-                                <Box p={1}>
-                                    <CircularProgress color="secondary" />
-                                </Box>
-                            </Box>
-                            <Box
-                                mt={2}
-                                display="flex"
-                                flexDirection="row"
-                                alignItems="flex-start"
-                                flexWrap="wrap"
-                            >
-                                <Button
-                                    aria-controls="simple-menu"
-                                    aria-haspopup="true"
-                                    onClick={handleClick}
-                                >
-                                    Open Menu
-                                </Button>
-                                <Menu
-                                    id="simple-menu"
-                                    anchorEl={anchorEl}
-                                    keepMounted
-                                    open={Boolean(anchorEl)}
-                                    onClose={handleClose}
-                                >
-                                    <MenuItem onClick={handleClose}>
-                                        Profile
-                                    </MenuItem>
-                                    <MenuItem onClick={handleClose}>
-                                        My account
-                                    </MenuItem>
-                                    <MenuItem onClick={handleClose}>
-                                        Logout
-                                    </MenuItem>
-                                </Menu>
-                            </Box>
-                        </Box>
-                    </Grid>
                 </Grid>
             </Box>
-        </>
+        </Box>
     )
 }
 
 const styles = (theme: Theme) =>
     createStyles({
+        top: {
+            background: theme.palette.primary.main,
+            height: '700px',
+            padding: theme.spacing(3),
+        },
+        topMiddle: {
+            background: theme.palette.background.default,
+            padding: theme.spacing(4),
+            textAlign: 'center',
+            borderRadius: '30px',
+        },
+        topCircle: {
+            background: theme.palette.secondary.main,
+            width: '70px',
+            height: '70px',
+            borderRadius: '50%',
+            margin: theme.spacing(2),
+        },
+        topDiamond: {
+            background: theme.palette.secondary.main,
+            width: '60px',
+            height: '60px',
+            transform: 'rotate(45deg)',
+            margin: theme.spacing(2),
+        },
+        topSquare: {
+            background: theme.palette.secondary.main,
+            width: '70px',
+            height: '70px',
+            margin: theme.spacing(2),
+        },
         block: {
             padding: theme.spacing(2),
             display: 'flex',
