@@ -1,7 +1,7 @@
 name = "typescript-react-template"
 type = "webpack"
 workers_dev = true
-route = ""
+route = "*react.jlappalainen.fi/*"
 zone_id = "e848575a71198f317db6f566c695f5b7"
 
 [site]
